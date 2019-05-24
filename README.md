@@ -1,9 +1,5 @@
 package 我的容器;
-/*
- * 
- * 定义一个容器；
- * 增加泛型的使用；
- */
+
 public class MyCollection<E> {
 	private Object[] elementDate;
 	private int size;
@@ -12,7 +8,7 @@ public class MyCollection<E> {
 	public void MyArrayList() {
 		elementDate = new Object[DEFALT_CAPACITY];
 	}
-	//自定义size；
+	
 	public void MyArrayList(int capacity) {
 		if(capacity<0) {
 			throw new RuntimeException("容器数量不能为负数："+capacity);
@@ -21,10 +17,7 @@ public class MyCollection<E> {
 		}else
 			elementDate = new Object[capacity];
 	}
-	//第一个：add方法；
-	//第二个：扩容；
-	//什么时候扩容？
-	//怎么扩容？1.定义一个新的数组；2.拷贝原数组到新数组；3.指向新数组；
+
 	public void add(E e) {
 		if(size==elementDate.length) {
 			Object[] newArray = new Object[elementDate.length+(elementDate.length>>1)];
@@ -33,7 +26,7 @@ public class MyCollection<E> {
 		}
 		elementDate[size++] = e;
 	}
-	//重写toString方法；
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -46,11 +39,11 @@ public class MyCollection<E> {
 				sb.append(",");
 			}
 		}
-//		sb.setCharAt(sb.length()-1, ']');
+
 		sb.append("]");
 		return sb.toString();
 	}
-	//容量；
+	
 	public int length() {
 		return elementDate.length;
 	}
