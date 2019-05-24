@@ -1,5 +1,4 @@
 package 我的容器;
-
 public class MyCollection<E> {
 	private Object[] elementDate;
 	private int size;
